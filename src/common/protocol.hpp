@@ -4,10 +4,11 @@
 const int MAX_POINTS_PER_PACKET = 20;
 
 enum PacketType : uint8_t {
-    PACKET_HI = 0,
-    PACKET_CURSOR = 1,
-    PACKET_STROKE = 2,
-    PACKET_LEAVE = 3
+    PACKET_WELCOME = 0,
+    PACKET_NEW_PLAYER = 1,
+    PACKET_LEAVE = 2,
+    PACKET_CURSOR = 3,
+    PACKET_STROKE = 4
 };
 
 struct Point {
@@ -20,16 +21,19 @@ struct Point {
 struct PacketWelcome {
     uint8_t type = PACKET_WELCOME;
     uint32_t myId; 
+    uint8_t r, g, b;
 };
 
 struct PacketNewPlayer {
     uint8_t type = PACKET_NEW_PLAYER;
     uint32_t playerId;
+    uint8_t r, g, b;
 };
 
 struct PacketLeave {
     uint8_t type = PACKET_LEAVE;
     uint32_t playerId;
+    uint8_t r, g, b;
 };
 
 struct PacketCursor {
