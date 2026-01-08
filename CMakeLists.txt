@@ -14,7 +14,7 @@ message(STATUS "Downloading and building SFML... (This may take a minute)")
 FetchContent_Declare(
     sfml
     GIT_REPOSITORY https://github.com/SFML/SFML.git
-    GIT_TAG        2.6.1  # Stable version
+    GIT_TAG        3.0.2  # Stable version
 )
 # We disable audio/network modules of SFML if you don't use them to save build time
 set(SFML_BUILD_AUDIO OFF CACHE BOOL "" FORCE)
